@@ -9,10 +9,13 @@
         .done {
             text-decoration: line-through;
         }
+        .select{
+            gap: 5px;
+        }
     </style>
 </head>
 <body>
-    <div class="flex flex-col h-screen gap-y-4 w-full bg-gradient-to-r from-pink-400 to-purple-600">
+    <div class="md:ml-0 ml-8 flex flex-col h-screen gap-y-4 w-full bg-gradient-to-r from-pink-400 to-purple-600">
         <h4 class="text-center text-[40px] text-slate-800 font-bold mt-12">MY TODO LIST</h4>
         <div class="bg-red-50 flex rounded-md p-5 w-4/12 mx-auto">
             <div class="flex w-full gap-x-4">
@@ -31,7 +34,7 @@
         let inputlist = document.querySelector("input")
 
         let todos = document.querySelector("#todo")
-            // let Time = new Date.now().toLocaleString()
+        let Time = new Date().toLocaleString()
 
         function addBtn() {
             
@@ -40,7 +43,7 @@
             let input = document.querySelector("input")
             
             let todo = document.createElement("p");
-            todo.innerHTML = `<input class="flex-row gap-4" type="checkbox" onclick="check(${id})" id="${id}"> <span>${input.value}</span>  <svg onclick="EditTodo(${id})" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z"/></svg> <svg onclick="deleteTodo(${id})" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg>`
+            todo.innerHTML = `<span>${Time}</span><div class="flex gap-12"><input type="checkbox" class="select" onclick="check(${id})" id="${id}"> <span>${input.value}</span>  <svg onclick="EditTodo(${id})" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z"/></svg> <svg onclick="deleteTodo(${id})" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg></div>`
             
             todos.appendChild(todo)
         }
