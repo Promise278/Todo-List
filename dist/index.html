@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My todo-list</title>
-    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <link rel="stylesheet" href="style.css"> -->
     <style>
         .done {
             text-decoration: line-through;
@@ -15,9 +16,9 @@
     </style>
 </head>
 <body>
-    <div class="md:ml-0 ml-8 flex flex-col h-screen gap-y-4 w-full bg-gradient-to-r from-pink-400 to-purple-600">
+    <div class="flex flex-col h-screen  gap-y-4 w-full bg-gradient-to-r from-lime-400 to-blue-600">
         <h4 class="text-center text-[40px] text-slate-800 font-bold mt-12">MY TODO LIST</h4>
-        <div class="bg-red-50 flex rounded-md p-5 w-4/12 mx-auto">
+        <div class="bg-white flex rounded-md mx-auto p-5 w-4/12">
             <div class="flex w-full gap-x-4">
                 <input type="text" placeholder="Enter your todo"
                 class="border-slate-400 border w-full p-2 placeholder-slate-300">
@@ -25,7 +26,7 @@
                 <button onclick="addBtn()" class="bg-blue-400 rounded-md text-white text-[20px] p-2">Add</button>
             </div>
         </div>
-        <div id="todo" class="flex flex-col w-4/12 mx-auto p-5 bg-white">
+        <div id="todo" class="flex flex-col w-4/12 p-5 bg-white mx-auto">
             <h4 class="font-bold text-[30px]">My Todos</h4>
         </div>
     </div>
